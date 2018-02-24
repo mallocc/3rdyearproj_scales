@@ -57,6 +57,8 @@ int ledCount = 50;
 
 int loadVal = 0;
 
+int testVar = 0;
+
 void setup() {
   // Open serial communications:
   Serial.begin(9600);
@@ -154,7 +156,7 @@ void writeStringln(String s)
 void sendLoadVal()
 {
   String s  = "xw";
-  writeStringln(s);// + intToChars(loadVal));
+  writeStringln(s + intToChars(loadVal));
 }
 
 bool handleCommand(String c)
@@ -232,10 +234,14 @@ void handleBluetoothState()
 
 void loop() {
   delay(100);
-  handleBluetoothState();
-  handleButtonState();
-  handleLEDState();
+  //handleBluetoothState();
+  //handleButtonState();
+  //handleLEDState();
   //sendLoadVal();
+
+  loadVal ++;
+  sendLoadVal();
+  
 }
 
 
