@@ -234,7 +234,7 @@ void handleBluetoothState()
 
 void loop() {
   delay(100);
-  //handleBluetoothState();
+  handleBluetoothState();
   //handleButtonState();
   //handleLEDState();
   //sendLoadVal();
